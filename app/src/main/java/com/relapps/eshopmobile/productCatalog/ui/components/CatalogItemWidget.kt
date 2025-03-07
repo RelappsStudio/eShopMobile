@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun CatalogItemWidget(item: CatalogItem, image: ImageBitmap?) {
+fun CatalogItemWidget(item: CatalogItem) {
 
     ElevatedCard(
         elevation = CardDefaults.cardElevation(
@@ -36,9 +36,9 @@ fun CatalogItemWidget(item: CatalogItem, image: ImageBitmap?) {
 
             Text(text = item.name)
 
-            if (image != null) {
+            if (item.image != null) {
                 Image(
-                    bitmap = image,
+                    bitmap = item.image,
                     contentDescription = "Item Image",
                     modifier = Modifier
                         .size(100.dp)
@@ -46,7 +46,7 @@ fun CatalogItemWidget(item: CatalogItem, image: ImageBitmap?) {
                     contentScale = ContentScale.Crop
                 )
             } else {
-                CircularProgressIndicator(modifier = Modifier.size(50.dp)) // Show while loading
+                CircularProgressIndicator(modifier = Modifier.size(50.dp))
             }
             Text(text = "${item.price} $")
         }

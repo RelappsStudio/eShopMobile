@@ -16,17 +16,12 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 abstract class CatalogModule {
 
-//
-    @Binds
-    @Singleton
-    abstract fun bindCatalogRepository(
-        catalogRepositoryImpl: CatalogRepositoryImpl
-    ): CatalogRepository
-//@Binds
-//@Singleton
-//abstract fun bindCatalogRepository(
-//    catalogRepositoryImpl: CatalogRepositoryImpl
-//): CatalogRepository
+//    @Binds
+//    @Singleton
+//    abstract fun bindCatalogRepository(
+//        catalogRepositoryImpl: CatalogRepositoryImpl
+//    ): CatalogRepository
+
 
     companion object {
         @Provides
@@ -42,11 +37,11 @@ abstract class CatalogModule {
         }
 
 
-//        @Provides
-//        @Singleton
-//        fun provideCatalogRepository(catalogApiService: CatalogApiService): CatalogRepository {
-//            return CatalogRepositoryImpl(catalogApiService)
-//        }
+        @Provides
+        @Singleton
+        fun provideCatalogRepository(catalogApiService: CatalogApiService): CatalogRepository {
+            return CatalogRepositoryImpl(catalogApiService)
+        }
     }
 
 

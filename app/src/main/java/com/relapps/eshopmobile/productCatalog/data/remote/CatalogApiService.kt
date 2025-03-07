@@ -2,6 +2,7 @@ package com.relapps.eshopmobile.productCatalog.data.remote
 
 import CatalogItem
 import CatalogResponse
+import CatalogType
 import okhttp3.ResponseBody
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -25,10 +26,10 @@ interface CatalogApiService {
         @Query("api-version") version: String = API_VERSION
     ) :CatalogItem
 
-//    @GET("api/catalog/types")
-//    suspend fun getAllTypes(
-//        @Query("api-version") version: String = API_VERSION
-//    ): List<CatalogType>
+    @GET("/api/catalog/catalogtypes")
+    suspend fun getAllTypes(
+        @Query("api-version") version: String = API_VERSION
+    ): List<CatalogType>
 
     @GET("/api/catalog/items/{id}/pic")
     suspend fun getItemPicture(

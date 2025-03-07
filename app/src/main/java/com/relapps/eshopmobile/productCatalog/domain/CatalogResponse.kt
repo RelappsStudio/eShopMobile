@@ -1,3 +1,5 @@
+import androidx.compose.ui.graphics.ImageBitmap
+
 data class CatalogResponse (
     val pageIndex: Int,
     val pageSize: Int,
@@ -18,4 +20,10 @@ data class CatalogItem (
     val restockTreshold: Int,
     val maxStockTreshold: Int,
     val onReorder: Boolean,
+    val image: ImageBitmap?,
+)
+
+data class CatalogType (
+    val id: Int,
+    val name: String
 )
